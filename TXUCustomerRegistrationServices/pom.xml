@@ -16,20 +16,7 @@
 		<cxf.version>2.5.0</cxf.version>
 	</properties>
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/com.sun.jdmk/jmxtools -->
-		<!-- <dependency>
-			<groupId>com.sun.jdmk</groupId>
-			<artifactId>jmxtools</artifactId>
-			<version>1.2.1</version>
-		</dependency> -->
-
-		<!-- https://mvnrepository.com/artifact/javax.jms/jms -->
-		<!-- <dependency>
-			<groupId>javax.jms</groupId>
-			<artifactId>jms</artifactId>
-			<version>1.1</version>
-		</dependency> -->
-
+	
 		<!-- mySQL -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -49,7 +36,6 @@
 			<artifactId>activemq-all</artifactId>
 			<version>5.4.3</version>
 		</dependency>
-
 
 		<!-- Jersey -->
 
@@ -150,24 +136,11 @@
 		</dependency>
 
 		<!-- Logging -->
-		<!-- <dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-api</artifactId> 
-			<version>${org.slf4j-version}</version> </dependency> <dependency> <groupId>org.slf4j</groupId> 
-			<artifactId>jcl-over-slf4j</artifactId> <version>${org.slf4j-version}</version> 
-			<scope>runtime</scope> </dependency> <dependency> <groupId>org.slf4j</groupId> 
-			<artifactId>slf4j-log4j12</artifactId> <version>${org.slf4j-version}</version> 
-			<scope>runtime</scope> </dependency> -->
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-		<!-- <dependency> <groupId>log4j</groupId> <artifactId>log4j</artifactId> 
-			<version>1.2.15</version> <exclusions> <exclusion> <groupId>javax.mail</groupId> 
-			<artifactId>mail</artifactId> </exclusion> <exclusion> <groupId>javax.jms</groupId> 
-			<artifactId>jms</artifactId> </exclusion> <exclusion> <groupId>com.sun.jdmk</groupId> 
-			<artifactId>jmxtools</artifactId> </exclusion> <exclusion> <groupId>com.sun.jmx</groupId> 
-			<artifactId>jmxri</artifactId> </exclusion> </exclusions> <scope>runtime</scope> 
-			</dependency> -->
 
 		<!-- @Inject -->
 		<dependency>
@@ -239,6 +212,16 @@
 					<mainClass>org.test.int1.Main</mainClass>
 				</configuration>
 			</plugin>
+			 <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <!-- web.xml is not mandatory since JavaEE 5 -->
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <warName>${artifactId}</warName>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 </project>

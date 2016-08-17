@@ -9,7 +9,7 @@ import com.txu.registration.util.HibernateSessionManager;
 public class UpdateCustomerDAO {
 
 	
-	public void saveSid(int sid, int cid) {
+	public int saveSid(int sid, int cid) {
 
 				
 		Session session = HibernateSessionManager.getSessionFactory().openSession();
@@ -27,7 +27,7 @@ public class UpdateCustomerDAO {
 		tx.commit();
 		
 		session.close();
-		
+		return result;
 		
 	}
 

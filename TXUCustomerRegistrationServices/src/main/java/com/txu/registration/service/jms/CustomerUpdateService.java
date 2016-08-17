@@ -8,10 +8,16 @@ import com.txu.registration.dao.UpdateCustomerDAO;
  */
 public class CustomerUpdateService {
 
+	public boolean processMessage(int sid, int cid) {
 
-	public void processMessage(int sid, int cid) {
+		int result = new UpdateCustomerDAO().saveSid(sid, cid);
+		boolean bool = false;
 
-		new UpdateCustomerDAO().saveSid(sid, cid);
+		if (result > 0) {
+			bool = true;
+		}
+
+		return bool;
 	}
 
 }

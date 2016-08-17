@@ -27,7 +27,13 @@ public class MessageReceiver implements MessageListener {
 			int serviceId = Integer.parseInt(msgAry[0]);
 			int customerId = Integer.parseInt(msgAry[1]);
 			
-			new CustomerUpdateService().processMessage(serviceId, customerId);
+			if (new CustomerUpdateService().processMessage(serviceId, customerId)) {
+				logger.info("Service plan id is set to the customer");
+			}
+			else {
+				logger.info("Service plan id update to the customer is unsuccessfull");
+			}
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
