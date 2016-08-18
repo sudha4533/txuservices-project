@@ -25,7 +25,7 @@ public class HibernateSessionManager {
 	public static Session getSession() {
 
 		if (currentSession == null) {
-			currentSession = sessionFactory.getCurrentSession();
+			currentSession = sessionFactory.openSession();
 		}
 		return currentSession;
 	}
