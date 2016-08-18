@@ -19,8 +19,8 @@ public class CustomerServiceDAO {
 		Query query = session.createQuery("from Customer where id = :cust_id ");
 	    query.setParameter("cust_id", cust_id);
 	    
-	    Customer customer = (Customer) query.list();
-	    
+	    Customer customer = (Customer) query.uniqueResult();
+	    HibernateSessionManager.closeSession();
 	    return customer;
 		
 	}

@@ -25,16 +25,16 @@ public class HibernateSessionManager {
 	public static Session getSession() {
 
 		if (currentSession == null) {
-			currentSession = sessionFactory.getCurrentSession();
+			currentSession = sessionFactory.openSession();
 		}
 		return currentSession;
 	}
 
-	/*public static void closeSession() {
+	public static void closeSession() {
 		// Close caches and connection pools
 		if (currentSession != null) {
 			currentSession.close();
 			currentSession = null;
 		}
-	}*/
+	}
 }

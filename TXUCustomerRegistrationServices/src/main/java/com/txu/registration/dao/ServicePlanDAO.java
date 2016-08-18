@@ -19,6 +19,8 @@ public class ServicePlanDAO {
 		
     	Criteria criteria = session.createCriteria(ServicePlan.class);
         List<ServicePlan> serviceplans = criteria.list();
+        HibernateSessionManager.closeSession();
+	    
         return serviceplans;
         
     }
