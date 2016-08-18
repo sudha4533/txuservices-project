@@ -24,16 +24,12 @@ public class ServicePlan {
 	private String plan_name;
 	private String description;
 
-	
-
 	/**
 	 * @return the service_id
 	 */
 	public int getService_id() {
 		return service_id;
 	}
-
-
 
 	/**
 	 * @param service_id the service_id to set
@@ -42,8 +38,6 @@ public class ServicePlan {
 		this.service_id = service_id;
 	}
 
-
-
 	/**
 	 * @return the start_date
 	 */
@@ -51,15 +45,12 @@ public class ServicePlan {
 		return start_date;
 	}
 
-
-
 	/**
 	 * @param start_date the start_date to set
 	 */
 	public void setStart_date(Date start_date) {
 		this.start_date = start_date;
 	}
-
 
 
 	/**
@@ -70,14 +61,12 @@ public class ServicePlan {
 	}
 
 
-
 	/**
 	 * @param end_date the end_date to set
 	 */
 	public void setEnd_date(Date end_date) {
 		this.end_date = end_date;
 	}
-
 
 
 	/**
@@ -87,16 +76,12 @@ public class ServicePlan {
 		return plan_name;
 	}
 
-
-
 	/**
 	 * @param plan_name the plan_name to set
 	 */
 	public void setPlan_name(String plan_name) {
 		this.plan_name = plan_name;
 	}
-
-
 
 	/**
 	 * @return the description
@@ -105,8 +90,6 @@ public class ServicePlan {
 		return description;
 	}
 
-
-
 	/**
 	 * @param description the description to set
 	 */
@@ -114,10 +97,4 @@ public class ServicePlan {
 		this.description = description;
 	}
 
-
-
-	@Override
-	public String toString(){
-		return service_id+"::"+plan_name+"::"+description;
-	}
 }

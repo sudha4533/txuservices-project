@@ -9,6 +9,7 @@ import com.txu.registration.model.ServicePlan;
 
 @WebService
 public interface UtilityPlanService {
+	
     @WebMethod
     public List<ServicePlan> getServicePlans();
 }

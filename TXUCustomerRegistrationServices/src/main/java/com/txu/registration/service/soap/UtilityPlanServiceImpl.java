@@ -14,7 +14,12 @@ public class UtilityPlanServiceImpl implements UtilityPlanService {
     @WebMethod
     @Override
     public List<ServicePlan> getServicePlans() {
-        List<ServicePlan> serviceplans = new ServicePlanDAO().getServicePlans();
+    	
+    	List<ServicePlan> serviceplans = null;
+    	
+        serviceplans = new ServicePlanDAO().getServicePlans();
+        
         return serviceplans;
+        
     }
 }

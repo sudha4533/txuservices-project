@@ -10,7 +10,7 @@ public class CustomerUpdateService {
 
 	public boolean processMessage(int sid, int cid) {
 
-		int result = new UpdateCustomerDAO().saveSid(sid, cid);
+		int result = new UpdateCustomerDAO().saveServiceId(sid, cid);
 		boolean bool = false;
 
 		if (result > 0) {

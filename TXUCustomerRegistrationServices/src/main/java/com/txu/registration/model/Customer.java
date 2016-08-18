@@ -96,7 +96,7 @@ public class Customer {
 
 	@Override
 	public String toString(){
-		return "id = " + id + " , name = " + firstname + " " + lastname;
+		return "Name = " + firstname + " " + lastname;
 	}
 
 	/**

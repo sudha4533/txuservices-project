@@ -1,11 +1,14 @@
 package com.txu.registration.util;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 public class HibernateSessionManager {
 
 	private static final SessionFactory sessionFactory = buildSessionFactory();
+
+	private static Session currentSession;
 
 	@SuppressWarnings("deprecation")
 	private static SessionFactory buildSessionFactory() {
@@ -19,13 +22,35 @@ public class HibernateSessionManager {
 		}
 	}
 
-	public static SessionFactory getSessionFactory() {
-		return sessionFactory;
+	public static Session getSession() {
+
+		if (currentSession == null) {
+			currentSession = sessionFactory.getCurrentSession();
+		}
+		return currentSession;
 	}
 
-	public static void shutdown() {
+	public static void closeSession() {
 		// Close caches and connection pools
-		getSessionFactory().close();
+		if (currentSession != null) {
+			currentSession.close();
+			currentSession = null;
+		}
 	}
 
+	/**
+	 * Save/update entity.
+	 * 
+	 * @param entity
+	 * Entity to save
+	 */
+	/*public static void save(Entity entity) {
+		
+		Session session = getSession();
+		Transaction tx = session.beginTransaction();
+		session.evict(entity);
+		session.saveOrUpdate(entity);
+		tx.commit();
+	}
+*/
 }
