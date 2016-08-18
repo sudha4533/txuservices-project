@@ -25,32 +25,16 @@ public class HibernateSessionManager {
 	public static Session getSession() {
 
 		if (currentSession == null) {
-			currentSession = sessionFactory.openSession();
+			currentSession = sessionFactory.getCurrentSession();
 		}
 		return currentSession;
 	}
 
-	public static void closeSession() {
+	/*public static void closeSession() {
 		// Close caches and connection pools
 		if (currentSession != null) {
 			currentSession.close();
 			currentSession = null;
 		}
-	}
-
-	/**
-	 * Save/update entity.
-	 * 
-	 * @param entity
-	 * Entity to save
-	 */
-	/*public static void save(Entity entity) {
-		
-		Session session = getSession();
-		Transaction tx = session.beginTransaction();
-		session.evict(entity);
-		session.saveOrUpdate(entity);
-		tx.commit();
-	}
-*/
+	}*/
 }

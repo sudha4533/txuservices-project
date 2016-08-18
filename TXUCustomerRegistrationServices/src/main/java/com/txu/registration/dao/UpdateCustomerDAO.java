@@ -22,7 +22,6 @@ public class UpdateCustomerDAO {
 		
 		int result = query.executeUpdate();
 			
-		HibernateSessionManager.closeSession();	
 		return result;
 		
 	}

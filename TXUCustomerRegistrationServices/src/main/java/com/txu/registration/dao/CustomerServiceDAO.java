@@ -21,8 +21,6 @@ public class CustomerServiceDAO {
 	    
 	    Customer customer = (Customer) query.list();
 	    
-	    HibernateSessionManager.closeSession();	
-		
 	    return customer;
 		
 	}
