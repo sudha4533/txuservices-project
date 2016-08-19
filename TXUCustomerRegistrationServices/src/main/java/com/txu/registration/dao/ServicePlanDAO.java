@@ -9,9 +9,13 @@ import org.springframework.stereotype.Repository;
 import com.txu.registration.model.ServicePlan;
 import com.txu.registration.util.HibernateSessionManager;
 
+
 @Repository
 public class ServicePlanDAO {
 	
+	/**
+	 * @returns service plans.
+	 */
     @SuppressWarnings("unchecked")
 	public List<ServicePlan> getServicePlans() {
     	

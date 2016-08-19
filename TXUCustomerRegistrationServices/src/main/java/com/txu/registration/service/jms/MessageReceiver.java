@@ -11,6 +11,9 @@ public class MessageReceiver implements MessageListener {
 	
 	private static final Logger logger = Logger.getLogger(MessageReceiver.class);
 
+	/**
+	 * Receives to the jms message
+	 */
 	@Override
 	public void onMessage(Message msg) {
 		
@@ -34,7 +37,6 @@ public class MessageReceiver implements MessageListener {
 				logger.info("Service plan id update to the customer is unsuccessfull");
 			}
 			
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

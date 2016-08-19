@@ -11,6 +11,9 @@ import com.txu.registration.model.ServicePlan;
 @WebService(endpointInterface="com.txu.registration.service.soap.UtilityPlanService", serviceName="UtilityPlanServiceImpl")
 public class UtilityPlanServiceImpl implements UtilityPlanService {
 	
+	/**
+	 * @returns serviceplans
+	 */
     @WebMethod
     @Override
     public List<ServicePlan> getServicePlans() {

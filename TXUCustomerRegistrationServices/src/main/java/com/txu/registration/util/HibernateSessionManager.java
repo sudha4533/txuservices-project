@@ -22,6 +22,9 @@ public class HibernateSessionManager {
 		}
 	}
 
+	/**
+	 * @returns a session
+	 */
 	public static Session getSession() {
 
 		if (currentSession == null) {
@@ -30,8 +33,11 @@ public class HibernateSessionManager {
 		return currentSession;
 	}
 
+	/**
+	 * Close caches and connection pools
+	 */
 	public static void closeSession() {
-		// Close caches and connection pools
+		 
 		if (currentSession != null) {
 			currentSession.close();
 			currentSession = null;

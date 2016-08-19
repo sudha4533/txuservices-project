@@ -8,7 +8,11 @@ import com.txu.registration.util.HibernateSessionManager;
 
 public class UpdateCustomerDAO {
 
-	
+	/**
+	 * @param sid
+	 * @param cid
+	 * @returns 1 when service_id is updated for the customer
+	 */
 	public int saveServiceId(int sid, int cid) {
 
 				
